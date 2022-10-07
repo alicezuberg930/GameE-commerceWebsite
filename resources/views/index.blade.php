@@ -1,5 +1,4 @@
-<?php
-defined('LOCAL_PATH_ROOT') or define("LOCAL_PATH_ROOT", $_SERVER["DOCUMENT_ROOT"]);
+{{-- defined('LOCAL_PATH_ROOT') or define("LOCAL_PATH_ROOT", $_SERVER["DOCUMENT_ROOT"]);
 defined('LOCAL_PATH_ROOT') or define("HTTP_PATH_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '_UNKNOWN_'));
 
 include_once('./util/date_util.php');
@@ -24,10 +23,12 @@ include_once('./util/product_util.php');
 include_once('./util/genre_util.php');
 include_once('./util/user_util.php');
 
-session_start(); ?>
+session_start(); 
+$GLOBALS['headerType'] = 'header'; --}}
 
-<?php $GLOBALS['headerType'] = 'header'; ?>
-
-@include('header/index')
+{{-- @include('header/index') --}}
 @include('body')
 @include('footer')
+
+{{-- @dd($ProductArray); --}}
+{{-- @dd($GenreArray); --}}

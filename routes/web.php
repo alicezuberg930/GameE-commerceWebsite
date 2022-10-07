@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\genreController;
+use App\Http\Controllers\productController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// Route::get('/',[genreController::class, 'getGenres']);
+Route::get('/',[productController::class, 'getProducts']);
