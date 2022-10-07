@@ -11,7 +11,7 @@ defined('HTTP_PATH_ROOT') or define("HTTP_PATH_ROOT", isset($_SERVER["HTTP_HOST"
     <link rel="shortcut icon" type="image/png" href="/game/img/icon.png">
     <link rel="stylesheet" href="/game/css/style.css">
     <link href="../../node_modules/" rel="stylesheet">
-    <script src="/game/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/game/node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="../../node_modules/xregexp/xregexp-all.js"></script>
     <script src="./js/api.js"></script>
