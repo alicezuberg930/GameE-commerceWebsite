@@ -24,15 +24,15 @@ class genreController extends Controller
     //     execute($sql);
     // }
 
-    // public static function updateGenre($genre)
-    // {
-    //     $name = $genre->getName();
-    //     $display = $genre->getDisplay();
+    public static function updateGenre($id)
+    {
+        $name = $genre->getName();
+        $display = $genre->getDisplay();
 
-    //     $sql = "UPDATE genre SET display='$display' WHERE name='$name'";
+        $sql = "UPDATE genre SET display='$display' WHERE name='$name'";
 
-    //     execute($sql);
-    // }
+        execute($sql);
+    }
 
     // public static function deleteGenreByName($name)
     // {

@@ -27,8 +27,6 @@ session_start();
 $GLOBALS['headerType'] = 'header'; --}}
 
 {{-- @include('header/index') --}}
+@include('head')
 @include('body')
-@include('footer')
-
-{{-- @dd($ProductArray); --}}
-{{-- @dd($GenreArray); --}}
+<x-footer />

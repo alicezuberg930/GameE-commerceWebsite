@@ -21,5 +21,5 @@ use App\Http\Controllers\productController;
 //     return view('index');
 // });
 
-// Route::get('/',[genreController::class, 'getGenres']);
-Route::get('/',[productController::class, 'getProducts']);
+Route::get('/',[genreController::class, 'getGenres']);
+// Route::get('/', [productController::class, 'getProducts']);

@@ -1,5 +1,6 @@
+
 <div class="container">
     @include('slideshow');
-    @include('news');
-    @include('onsale');
+    <x-news />
+    {{-- @include('onsale'); --}}
 </div>
