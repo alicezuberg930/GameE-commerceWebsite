@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ProGame </title>
     <link rel="shortcut icon" type="image/png" href="{{ url('./icon.png') }}">
-    <script src="{{ url('./js/jquery.js') }}"></script>
-    <script src="{{ url('./js/xregexp-all.js') }}"></script>
+    {{-- <script src="{{ url('./js/xregexp-all.js') }}"></script> --}}
     <script src="{{ url('./js/api.js') }}"></script>
-    <script src="{{ url('./js/bootstrap.js') }}"></script>
-    <script src="{{ url('./js/popper.js') }}"></script>
+    <script src="{{ url('./jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url('./bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('./popper/dist/umd/popper.min.js') }}"></script>
     <link rel="stylesheet" href="{{ url('./css/footer.css') }}">
     <link rel="stylesheet" href="{{ url('./css/slideshow.css') }}">
     <link rel="stylesheet" href="{{ url('./css/style.css') }}">
-    <link rel="stylesheet" href="{{ url('./css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('./bootstrap/dist/css/bootstrap.min.css') }}">
 </head>

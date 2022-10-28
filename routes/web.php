@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\genreController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\productController;
 
 /*
@@ -21,5 +22,13 @@ use App\Http\Controllers\productController;
 //     return view('index');
 // });
 
-Route::get('/',[genreController::class, 'getGenres']);
-// Route::get('/', [productController::class, 'getProducts']);
+Route::get('/', [genreController::class, 'getGenres']);
+Route::get('/admin/genre', [genreController::class, 'getGenres']);
+Route::get('/admin/genre/add_genre_form', [genreController::class, 'addGenre']);
+
+Route::get('/loginregister', function () {
+    return view('loginregister.index');
+});
+
+Route::post('/loginregister/login', [userController::class, 'login']);
+Route::post('/loginregister/register', [userController::class, 'register']);

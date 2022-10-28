@@ -11,8 +11,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-if (!UserUtil::hasPermission($_SESSION['username'], 'admin.login')) {
-    header('Location: https://'.HTTP_PATH_ROOT.'/game/');
-    exit();
-}
-?>
+// if (!UserUtil::hasPermission($_SESSION['username'], 'admin.login')) {
+//     header('Location: https://'.HTTP_PATH_ROOT.'/game/');
+//     exit();
+// }

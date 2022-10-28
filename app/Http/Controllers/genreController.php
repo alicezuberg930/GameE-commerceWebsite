@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class genreController extends Controller
 {
@@ -14,41 +15,43 @@ class genreController extends Controller
         return view('index', ['GenreArray' => $genreArray]);
     }
 
-    // public static function insertGenre($genre)
-    // {
-    //     $name = $genre->getName();
-    //     $display = $genre->getDisplay();
-
-    //     $sql = "INSERT INTO genre(name, display) values('$name', '$display')";
-
-    //     execute($sql);
-    // }
-
-    public static function updateGenre($id)
+    public static function addGenre(Request $request)
     {
-        $name = $genre->getName();
-        $display = $genre->getDisplay();
-
-        $sql = "UPDATE genre SET display='$display' WHERE name='$name'";
-
-        execute($sql);
+        DB::table('genre')->insert([
+            'name' => $request->input('genre-name'),
+            'display' => $request->input('genre-display')
+        ]);
     }
 
-    // public static function deleteGenreByName($name)
-    // {
-    //     $sql = "DELETE FROM genre WHERE name='$name'";
+    public static function updateGenre(Request $request, $id)
+    {
+        $genre = genre::find($id);
+        if ($genre) {
+            $genre->name = $request->input('genre-name');
+            $genre->display = $request->input('genre-display');
+            $genre->update();
+            return response()->json([
+                'status' => 200,
+                'genre' => 'Genre updated successfully'
+            ]);
+        } else {
+            return response()->json([
+                'status' => 404,
+                'message' => 'Genre not found'
+            ]);
+        }
+    }
 
-    //     execute($sql);
-    // }
+    public static function deleteGenreByName($name)
+    {
+        DB::table('genre')->where('name', '=', $name)->delete();
+    }
 
-    // public static function hasGenreName($name)
-    // {
-    //     $sql = "SELECT * FROM genre WHERE name='$name'";
-
-    //     $arr = toArray(execute($sql));
-
-    //     return count($arr) > 0;
-    // }
+    public static function hasGenreName($name)
+    {
+        $genreArray = DB::table('genre')->select()->where('name', '=', $name);
+        return $genreArray;
+    }
 
     // public static function getGenreByName($name)
     // {

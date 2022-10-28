@@ -22,8 +22,6 @@ class ComposerAutoloaderInitcefcad558048d392681da973ec1a226d
             return self::$loader;
         }
 
-        require __DIR__ . '/platform_check.php';
-
         spl_autoload_register(array('ComposerAutoloaderInitcefcad558048d392681da973ec1a226d', 'loadClassLoader'), true, true);
         self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
         spl_autoload_unregister(array('ComposerAutoloaderInitcefcad558048d392681da973ec1a226d', 'loadClassLoader'));
